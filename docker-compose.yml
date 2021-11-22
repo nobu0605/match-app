@@ -1,4 +1,4 @@
-version: '3.1'
+version: "3.1"
 
 services:
   mongo:
@@ -13,13 +13,13 @@ services:
       - ./configdb:/data/configdb
 
   app:
-    image: node:12
+    image: node:16
     environment:
       - TZ=Asia/Tokyo
       - DEBUG=app:*
     tty: true
     ports:
-      - '3000:3000'
+      - "3000:3000"
     volumes:
       - ./src:/app
     working_dir: /app
